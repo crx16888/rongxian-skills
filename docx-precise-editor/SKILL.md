@@ -1,16 +1,13 @@
 ---
 name: docx-precise-editor
-description: 精确编辑 Word 活动方案文档——只改授权内容，绝不多碰一个字节。支持内容具体化、职责边界澄清、案例行增补。触发热词：活动方案、活动提案、Hackathon方案、校园活动方案、修改word、编辑docx。
-agent_created: true
-version: 1.0.0
-allowed-tools: Read, Write, Edit, Bash, open_result_view
+description: 精确编辑 Word 活动方案和提案类 .docx 文档，尽量只修改授权内容并保留原有版式。Use when Codex needs to modify activity plans, event proposals, Hackathon plans, campus activity方案, Word/docx text, responsibility descriptions, budgets, or append rows to reference/case tables while preserving formatting.
 ---
 
-# docx-precise-editor · 活动方案精准编辑器
+# docx-precise-editor · Codex 活动方案精准编辑器
 
 > 核心原则：**只改你批准的，绝不多碰一个字节。**
 
-## 为什么不用标准 docx Skill
+## 为什么不用通用 docx 流程
 
 标准流程 `unpack → 改 XML → pack` 会**重新格式化整个文档的 XML**，连封面、页眉、未授权的章节都会被自动重构。你改三个字，它给你翻修全屋。
 
@@ -56,14 +53,16 @@ allowed-tools: Read, Write, Edit, Bash, open_result_view
 
 > 不使用 Noto Sans CJK SC、思源等对方可能未安装的字体。文档发给任何人，打开即所见。
 
-## 脚本
+## 使用脚本
+
+从当前 skill 目录解析脚本路径，例如 `/Users/crx/.codex/skills/docx-precise-editor/scripts/edit_docx.py`。不要假设用户当前工作目录就在 skill 目录中。
 
 ```bash
 # 字节级编辑（不改任何 XML 结构）
 python3 scripts/edit_docx.py <文件路径> <old_text> <new_text>
 
 # 追加案例表格行
-python3 scripts/append_table_row.py <文件路径> <行数据JSON>
+python3 scripts/append_table_row.py <文件路径> <行数据JSON> <表格内定位文字>
 ```
 
 ## 目录

@@ -40,7 +40,8 @@ def extract_row_style(data: bytes, tr_start: int) -> dict:
 
     # 提取字体
     fonts = re.findall(rb'(<w:rFonts[^/]*/>)', row_xml)
-    font_xml = fonts[0] if fonts else b'<w:rFonts w:ascii="宋体" w:hAnsi="宋体" w:eastAsia="宋体"/>'
+    default_font_xml = '<w:rFonts w:ascii="宋体" w:hAnsi="宋体" w:eastAsia="宋体"/>'.encode("utf-8")
+    font_xml = fonts[0] if fonts else default_font_xml
 
     # 提取字号
     sz_match = re.search(rb'<w:sz w:val="(\d+)"/>', row_xml)

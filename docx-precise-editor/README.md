@@ -50,10 +50,10 @@ python3 scripts/append_table_row.py 活动方案.docx '["案例名","形式","�
 
 不用思源、苹方、方正 —— 发给合作方打不开等于白做。
 
-## 作为 WorkBuddy Skill 安装
+## 作为 Codex Skill 安装
 
 ```bash
-cp -r docx-precise-editor ~/.workbuddy/skills/
+cp -r docx-precise-editor ~/.codex/skills/
 ```
 
-之后对 WorkBuddy 说「帮我把活动方案第 3 段改具体一点」即可触发。
+之后重启 Codex，对 Codex 说「帮我把活动方案第 3 段改具体一点」即可触发。

@@ -33,7 +33,8 @@ def edit_text(docx_path: str, old_text: str, new_text: str) -> None:
         print(f"   文档中可能不包含此文本，检查是否有多余空格或换行。")
         sys.exit(1)
 
-    data = data.replace(old_bytes, new_bytes)
+    expected_data = data.replace(old_bytes, new_bytes)
+    data = expected_data
 
     # 4. 写回 ZIP
     with zipfile.ZipFile(docx_path, "r") as zin:
@@ -52,9 +53,9 @@ def edit_text(docx_path: str, old_text: str, new_text: str) -> None:
     with zipfile.ZipFile(backup_path, "r") as z:
         old_data = z.read("word/document.xml")
 
-    # 封面区域（前 5000 字节）必须不变
-    if new_data[:5000] != old_data[:5000]:
-        print("⚠️ 警告：封面区域发生变化，已从备份恢复。")
+    # 写回后 document.xml 必须只包含授权文本替换，不能有额外结构变化。
+    if new_data != old_data.replace(old_bytes, new_bytes):
+        print("⚠️ 警告：检测到授权替换以外的 XML 变化，已从备份恢复。")
         shutil.copy2(backup_path, docx_path)
         sys.exit(1)
 
