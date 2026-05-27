@@ -32,7 +32,7 @@ python3 scripts/append_table_row.py 活动方案.docx '["案例名","形式","�
 ## 文件结构
 
 ```
-├── SKILL.md                    # WorkBuddy Skill 定义
+├── SKILL.md                    # Codex Skill 定义
 ├── scripts/
 │   ├── edit_docx.py            # 字节级文本替换
 │   └── append_table_row.py     # 表格尾追加行
@@ -53,7 +53,7 @@ python3 scripts/append_table_row.py 活动方案.docx '["案例名","形式","�
 ## 作为 Codex Skill 安装
 
 ```bash
-cp -r docx-precise-editor ~/.codex/skills/
+cp -r docx-precise-editor-codex ~/.codex/skills/docx-precise-editor
 ```
 
 之后重启 Codex，对 Codex 说「帮我把活动方案第 3 段改具体一点」即可触发。

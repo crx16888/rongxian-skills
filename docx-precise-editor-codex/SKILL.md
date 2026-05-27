@@ -1,6 +1,6 @@
 ---
 name: docx-precise-editor
-description: 精确编辑 Word 活动方案和提案类 .docx 文档，尽量只修改授权内容并保留原有版式。Use when Codex needs to modify activity plans, event proposals, Hackathon plans, campus activity方案, Word/docx text, responsibility descriptions, budgets, or append rows to reference/case tables while preserving formatting.
+description: 精确编辑 Word 活动方案和提案类 .docx 文档，尽量只修改授权内容并保留原有版式。Use when Codex needs to modify activity plans, event proposals, Hackathon plans, campus activity方案, Word/docx text, responsibility descriptions, budgets, pricing tables, material-execution scope, tax/payment terms, or append rows while preserving formatting.
 ---
 
 # docx-precise-editor · Codex 活动方案精准编辑器
@@ -28,6 +28,16 @@ description: 精确编辑 Word 活动方案和提案类 .docx 文档，尽量只
    docx → .backup         zipfile 只读 document.xml     封面未碰✓ 结构完好✓
 ```
 
+## 开场声明
+
+每次使用本 skill，先告诉用户：
+
+```text
+使用 skill：docx-precise-editor
+路径：/Users/linyao/.codex/skills/docx-precise-editor/SKILL.md
+原因：<一句话>
+```
+
 ## 活动方案常见编辑模式
 
 | 模式 | 原始 | 改为 |
@@ -36,6 +46,20 @@ description: 精确编辑 Word 活动方案和提案类 .docx 文档，尽量只
 | **职责边界澄清** | 协助搭建报名、分组 | 负责分组签到和现场执行（学生名单由甲方提供） |
 | **案例行增补** | 表格 3 行 | 表格 4 行（追加一行，列宽字体对齐） |
 | **数据更新** | 预算 50,000 | 预算 80,000 |
+
+## 报价方案编辑
+
+如果用户修改报价、套餐、物料、税费、付款、多场次折扣，先读：
+
+`references/activity-quote-rules.md`
+
+报价表格是高风险区域：
+
+- 不要把整张表的文本合并到一个 `<w:t>` 或一个单元格里。
+- 改表格时按 `w:tr` / `w:tc` 单元格处理，保证每行列数一致。
+- 改完必须抽取表格行列核对，例如打印每行 cell 文本。
+- “不包含”在总览表里用 `／`，不要写成长文本。
+- 重点差异要加粗：套餐名、价格、AI Workshop、物料执行边界、税费、付款方式、多场次折扣。
 
 ## 字体标准（Word 合作文档级）
 
@@ -75,4 +99,5 @@ docx-precise-editor/
 │   └── append_table_row.py           # 表格尾追加行
 └── references/
     └── style-guide.md                # 字体与排版规范
+    └── activity-quote-rules.md       # 活动报价口径
 ```

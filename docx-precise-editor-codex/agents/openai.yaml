@@ -1,0 +1,3 @@
+display_name: DOCX Precise Editor
+short_description: Precise .docx edits for Chinese activity plans, proposals, pricing tables, and execution terms while preserving formatting.
+default_prompt: Help me precisely edit this Word activity proposal, preserving formatting and only changing the approved content.
