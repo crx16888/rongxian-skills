@@ -1,0 +1,3 @@
+display_name: 活动方案
+short_description: 撰写和精修活动方案、执行方案、招商提案、排期、预算和分工文档。
+default_prompt: 帮我写或修改这个活动方案，保留已确定事实，明确排期、分工、预算和交付。

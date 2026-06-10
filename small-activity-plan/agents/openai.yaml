@@ -1,0 +1,3 @@
+display_name: 小活动方案
+short_description: 半天或一天小型活动方案、流程表、执行SOP、分工、物料和预算。
+default_prompt: 帮我写或修改这个小活动方案，重点明确现场流程、人员分工、物料、预算和风险预案。

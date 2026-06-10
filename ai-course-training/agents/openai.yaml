@@ -1,0 +1,3 @@
+display_name: AI课程培训
+short_description: 设计 AI 培训方案、Workshop、课程大纲、课表、实训任务、报价和交付物。
+default_prompt: 帮我写或修改这个 AI 课程培训方案，明确课程模块、课表、实操任务、交付物和报价边界。

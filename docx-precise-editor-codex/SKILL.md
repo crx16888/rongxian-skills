@@ -1,9 +1,9 @@
 ---
 name: docx-precise-editor
-description: 精确编辑 Word 活动方案和提案类 .docx 文档，尽量只修改授权内容并保留原有版式。Use when Codex needs to modify activity plans, event proposals, Hackathon plans, campus activity方案, Word/docx text, responsibility descriptions, budgets, pricing tables, material-execution scope, tax/payment terms, or append rows while preserving formatting.
+description: 底层 Word .docx 精准编辑工具，用于需要字节级保留版式、封面、图片、表格结构并只修改授权文本的 DOCX 操作。活动相关文档不要直接用本 skill 判断业务场景：活动策划/执行方案使用 活动方案，AI 课程/培训使用 AI课程培训，合同/协议/条款使用 活动合同；这些场景需要保留 Word 格式时再复用本 skill 的脚本和 DOCX 编辑规则。
 ---
 
-# docx-precise-editor · Codex 活动方案精准编辑器
+# docx-precise-editor · Word DOCX 精准编辑工具
 
 > 核心原则：**只改你批准的，绝不多碰一个字节。**
 
@@ -12,6 +12,15 @@ description: 精确编辑 Word 活动方案和提案类 .docx 文档，尽量只
 标准流程 `unpack → 改 XML → pack` 会**重新格式化整个文档的 XML**，连封面、页眉、未授权的章节都会被自动重构。你改三个字，它给你翻修全屋。
 
 本 Skill 用 `zipfile` 直接操作 ZIP 包，字节级精准替换。封面、样式、图片 —— 原封不动。
+
+## 场景路由
+
+本 skill 只负责 DOCX 的低层编辑方式，不负责判断活动文档的业务写法。
+
+- 活动方案、执行方案、招商方案、排期、预算、分工：先使用 `活动方案`。
+- AI Workshop、AI 培训方案、课程大纲、课表、实训任务：先使用 `AI课程培训`。
+- 活动合同、服务协议、付款验收、违约责任、保密和知识产权条款：先使用 `活动合同`。
+- 当上述 skill 需要修改已有 Word 文件并保留版式时，再调用本 skill 的脚本和技术铁律。
 
 ## 技术铁律
 
@@ -34,7 +43,7 @@ description: 精确编辑 Word 活动方案和提案类 .docx 文档，尽量只
 
 ```text
 使用 skill：docx-precise-editor
-路径：/Users/linyao/.codex/skills/docx-precise-editor/SKILL.md
+路径：/Users/crx/.codex/skills/docx-precise-editor/SKILL.md
 原因：<一句话>
 ```
 

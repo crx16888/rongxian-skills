@@ -1,0 +1,3 @@
+display_name: 活动合同
+short_description: 起草和精修活动合同、服务协议、付款验收、责任边界和风险条款。
+default_prompt: 帮我写或修改这个活动合同，明确服务范围、费用付款、验收、违约和风险边界。
