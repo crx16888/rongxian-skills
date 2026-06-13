@@ -1,0 +1,6 @@
+interface:
+  display_name: "制造业 AI 生产流转"
+  short_description: "拆解制造业生产流转与 AI 试点"
+  default_prompt: "Use $manufacturing-ai-flow to拆解一个中小制造业 AI 生产流转试点，并输出业务主线、页面、字段、AI 边界和实施计划。"
+policy:
+  allow_implicit_invocation: true
