@@ -41,6 +41,13 @@ AI Workshop、企业/校园 AI 培训、课程大纲、课表、实训任务、�
 
 ## 工具层
 
+### frontend-product-review
+
+Web 前端产品修改建议 skill。用于把页面建议写到导航、顶部、筛选、列表、按钮、侧板、弹窗和点击结果的粒度，避免只给抽象产品判断。
+
+- 路径：[`frontend-product-review/`](frontend-product-review/)
+- 适用：Web 产品评审、前端页面改造建议、交互路径梳理、页面级实现规划
+
 ### docx-precise-editor-codex
 
 Codex 版本的底层 Word `.docx` 精准编辑工具。它不再负责判断活动业务场景，只负责在需要保留 Word 版式时做低层文本替换和表格编辑。
@@ -56,4 +63,3 @@ Codex 版本的底层 Word `.docx` 精准编辑工具。它不再负责判断活
 WorkBuddy 版本。保留 WorkBuddy frontmatter 和工具授权字段，适合安装到 `~/.workbuddy/skills/`。
 
 - 路径：[`docx-precise-editor-workbuddy/`](docx-precise-editor-workbuddy/)
-
