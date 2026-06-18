@@ -1,0 +1,3 @@
+display_name: 飞书小型活动
+short_description: 半天或一天小型活动的飞书交付文档结构和验证流程。
+default_prompt: Use $feishu-small-activity to create a polished Feishu document for a small half-day activity.

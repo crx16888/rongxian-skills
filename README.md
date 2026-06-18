@@ -18,6 +18,13 @@
 - 路径：[`small-activity-plan/`](small-activity-plan/)
 - 重点：现场流程、人员分工、物料清单、预算、执行 SOP、风险预案
 
+### 飞书小型活动
+
+飞书文档中的半天或一天小型活动交付文档，适合需要直接创建、更新和验证 Feishu/Lark 文档的沙龙、圆桌、开放麦、Workshop、路演、分享会。
+
+- 路径：[`feishu-small-activity/`](feishu-small-activity/)
+- 重点：飞书 DocxXML 结构、callout/table/grid/checkbox/whiteboard、确定版写作口径、fetch 验证
+
 ### 大活动方案
 
 两天及以上的大型活动方案，适合峰会、展会、科技节、黑客松、赛事、训练营、活动周和多方协同项目。
