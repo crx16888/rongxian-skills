@@ -1,6 +1,6 @@
 ---
 name: feishu-small-activity
-description: Use when creating or updating Feishu/Lark documents for small half-day or one-day activities, salons, roundtables, workshops, roadshows, open mics, or single-session events that need a polished deliverable structure.
+description: Use when creating or updating Feishu/Lark documents for small half-day or one-day activities, salons, roundtables, workshops, roadshows, open mics, single-session events, or reusable activity-plan templates with owner/executor fields.
 ---
 
 # Feishu Small Activity
@@ -13,6 +13,7 @@ description: Use when creating or updating Feishu/Lark documents for small half-
 - 沙龙、圆桌、开放麦、Workshop、路演、分享会、闭门交流会、单场培训或单日活动。
 - 用户要求“成熟、可交付、不要建议稿”的飞书活动文档。
 - 已有飞书文档需要把主题、日期、嘉宾、流程、费用、分工改成确定版。
+- 用户要求从一份飞书活动方案提炼通用模板，或把另一份飞书文档覆盖为可复用活动模板。
 
 不要使用本 skill：
 
@@ -24,9 +25,29 @@ description: Use when creating or updating Feishu/Lark documents for small half-
 
 1. 先使用 `lark-doc` 和 `lark-shared`，并遵守 docs v2：`docs +fetch/+create/+update --api-version v2`。
 2. 默认使用 XML / DocxXML，不主动切 Markdown；需要富 block、表格、callout、checkbox、whiteboard 时必须用 XML。
-3. 飞书账号使用当前用户指定的稳定配置：优先 `--profile new-feishu`；身份按任务可行性选择，能用 bot 就 `--as bot`，bot 文档接口报 `99991672` 时报告真实阻塞，必要时用同 appId 的有效 user 授权完成文档交付。
+3. 飞书账号使用当前用户指定的稳定配置：优先 `--profile new-feishu`；身份按任务可行性选择，能用 bot 就 `--as bot`，bot 文档接口报 `99991672` 或 `4030004 No permission to operate` 时报告真实阻塞；如果同 appId 的 `--as user` 有编辑权限，改用 user 身份完成交付并说明身份切换原因。
 4. 修改已有文档时，先 `docs +fetch` 读取当前内容；小改优先 `str_replace` 或 block 级更新，整篇语气和结构都要成熟化时可用 `overwrite`。
-5. 完成后必须 fetch 验证关键字段，不只相信 update 返回成功。
+5. 用户给多个飞书链接时，必须先区分：
+   - **来源文档**：用于读取、提炼、参考，不要修改，除非用户明确说改这份。
+   - **目标文档**：用户明确要求“改这个文档 / 覆盖为模板 / 沉淀到这份”的链接，所有写操作只落到目标文档。
+   不要把模板追加到来源文档末尾，也不要因为刚读了来源文档就默认编辑来源文档。
+6. 覆盖写入前不要用“权限测试”类内容长期停留在目标文档里。若必须验证 user 是否可写，测试成功后立即用最终内容再次 overwrite，并回读确认最终内容已恢复。
+7. 完成后必须 fetch 验证关键字段，不只相信 update 返回成功。
+
+## 通用模板覆盖规则
+
+当用户要求“提炼模板”“沉淀模板”“把某份文档覆盖改为通用模板”时：
+
+1. 读取来源文档，提炼真实模块和字段；读取目标文档确认可访问。
+2. 目标文档通常使用 `overwrite`，不是在末尾 `append` 一个说明模板。
+3. Rundown / 流程表应放在模板前部，便于执行团队优先查看。
+4. 模板必须直接标注填写责任，而不是只在文末解释：
+   - `<span text-color="red">红色 = 甲方填写/确认</span>`
+   - `<span text-color="blue">蓝色 = 乙方填写/执行</span>`
+   - `<span text-color="green">绿色 = 双方共同确认</span>`
+   - `<span text-color="orange">橙色 = 待确认/风险项</span>`
+5. 需要覆盖的模块至少包括：活动概览、详细 Rundown、内容模块、嘉宾信息、报名与筛选、传播设计、现场执行、品牌素材、Checklist、可删减模块建议。
+6. 如果目标文档已有内容，覆盖前要确认用户确实表达了覆盖意图；用户说“把这个文档覆盖改为通用模板”即视为已确认。
 
 ## 文档结构
 
@@ -58,6 +79,8 @@ description: Use when creating or updating Feishu/Lark documents for small half-
 
 - 文档链接可读取，更新后的 revision 变化。
 - 日期、主题、费用、人数规模、交付物可用关键词 fetch 命中。
+- 模板化任务必须回读目标文档的 outline，确认 `详细 Rundown` 在前部，且没有把模板错误追加到来源文档末尾。
+- 模板化任务必须用关键词 fetch 命中 `填写颜色规则`、`甲方填写`、`乙方执行`、`待确认/风险项` 等责任标注。
 - 没有残留“建议主题、待确认日期、7 月第一周、择期”等与用户确定信息冲突的旧词。
 - 每个 h1/h2 至少有一个非纯文本 block；连续纯文本不超过 3 段。
 - 最终回复只给飞书链接和关键变更，不复述密钥或内部 token。
