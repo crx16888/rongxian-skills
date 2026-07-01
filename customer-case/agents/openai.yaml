@@ -1,0 +1,4 @@
+interface:
+  display_name: "客户案例"
+  short_description: "商务客户案例、服务案例和国企汇报材料规范"
+  default_prompt: "Use $customer-case to upgrade this material into a polished business customer case while anonymizing client identifiers."
