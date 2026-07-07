@@ -1,0 +1,7 @@
+interface:
+  display_name: "个人 PPT"
+  short_description: "维护陈容贤个人介绍、Flux南客松与企业AI分享PPT"
+  default_prompt: "Use $personal-ppt to update my personal introduction deck with the latest content."
+
+policy:
+  allow_implicit_invocation: true
