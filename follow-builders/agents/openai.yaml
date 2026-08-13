@@ -1,0 +1,4 @@
+interface:
+  display_name: "AI Builders 日报"
+  short_description: "追踪 AI Builder 动态并整理成可执行的中文摘要内容与选题。"
+  default_prompt: "使用 $follow-builders 整理今天值得关注的 AI Builder 动态。"

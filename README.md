@@ -63,6 +63,52 @@ Codex 版本的底层 Word `.docx` 精准编辑工具。它不再负责判断活
 - 适用：已有 Word 文件的局部修改、保留封面/样式/图片/表格结构、字节级文本替换
 - 被复用：`小活动方案`、`大活动方案`、`AI课程培训`、`活动合同`
 
+### customer-case
+
+客户案例、服务案例、商业合作材料和能力展示材料，适合需要脱敏或正式对外表达的项目复盘。
+
+- 路径：[`customer-case/`](customer-case/)
+
+### manufacturing-ai-flow
+
+中小制造业 AI 生产流转、MES/轻量 ERP 试点、工单、工艺参数、风险日报和实施路线设计。
+
+- 路径：[`manufacturing-ai-flow/`](manufacturing-ai-flow/)
+
+### frontend-product-review
+
+Web 产品页面评审和前端改造建议，具体到页面模块、按钮、筛选、列表、侧板和点击结果。
+
+- 路径：[`frontend-product-review/`](frontend-product-review/)
+
+### personal-ppt
+
+陈容贤个人介绍、创业经历、企业 AI 分享和服务转化类 PowerPoint 材料。
+
+- 路径：[`personal-ppt/`](personal-ppt/)
+
+## 内容与研究类
+
+### dong-kehan
+
+董克汉创作者档案分析、审美偏好、价值地图和语言风格提取。
+
+- 路径：[`dong-kehan/`](dong-kehan/)
+
+### follow-builders
+
+追踪 AI Builder 在 X/Twitter 和 YouTube 的动态，整理成中文 AI 行业摘要。
+
+- 路径：[`follow-builders/`](follow-builders/)
+
+## 飞书画板类
+
+### design-lark-chart
+
+把业务需求转成可编辑、可质检的飞书架构图、流程图、泳道图、时序图、思维导图和自由画图结果。
+
+- 路径：[`design-lark-chart/`](design-lark-chart/)
+
 ## 兼容版本
 
 ### docx-precise-editor-workbuddy
