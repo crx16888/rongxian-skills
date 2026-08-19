@@ -32,6 +32,13 @@
 - 路径：[`large-activity-plan/`](large-activity-plan/)
 - 重点：跨天时间轴、活动模块、组织架构、综合保障、招商传播、预算和验收成果
 
+### 文旅 AIGC 黑客松方案
+
+面向景区、文旅项目和地方文旅部门的 AIGC 创作者黑客松、AI 文旅内容赛事与文创 IP 共创赛。
+
+- 路径：[`design-cultural-tourism-aigc-hackathon/`](design-cultural-tourism-aigc-hackathon/)
+- 重点：线上报名筛选、双赛道独立评奖、具体作品交付、景区价值、最低刚性成本与完整执行预算
+
 ### AI课程培训
 
 AI Workshop、企业/校园 AI 培训、课程大纲、课表、实训任务、讲师配置、培训报价和交付方案。

@@ -1,0 +1,4 @@
+interface:
+  display_name: "文旅 AIGC 黑客松方案"
+  short_description: "为景区设计务实、可落地的 AIGC 创作者赛事方案"
+  default_prompt: "使用 $design-cultural-tourism-aigc-hackathon 为一个景区撰写极简、务实的 AIGC 创作者黑客松方案。"
