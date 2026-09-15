@@ -1,0 +1,4 @@
+interface:
+  display_name: "黑客松活动方案制作Skill"
+  short_description: "Generate event proposal + pricing docs (hackathon, workshop, sponsor packages)"
+  default_prompt: "Use $event-quote to draft the activity proposal and itemized pricing document from these project parameters."
